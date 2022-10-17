@@ -1,0 +1,16 @@
+<!-- <textarea #textArea [value]="words" readonly> </textarea> -->
+
+<!-- <div class="textarea">
+	<ng-template ngFor let-char [ngForOf]="words.split('')" let-i="index">
+		<span style="color:black">{{char}}</span>
+	</ng-template>
+	
+</div> -->
+
+<div class="textarea">
+	<span style="background-color:green">{{correctWords.join('')}}</span>
+	<span style="background-color:red">{{wrongWords.join('')}}</span>
+	<span style="color:black">{{wordsArray.join('')}}</span>
+</div>
+<br>
+<input type="text" [(ngModel)] = "typedValue" (input)="onSearchChange($any($event))">
