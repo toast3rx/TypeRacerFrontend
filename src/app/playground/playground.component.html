@@ -7,10 +7,16 @@
 	
 </div> -->
 
+<button (click)="startGame()"> Start </button>
+<button (click)="resetTimer()"> Reset </button>
+<p> Time left: {{timeLeftInSeconds}} </p>
+<p> Words typed: {{wordsTyped}}</p>
 <div class="textarea">
 	<span style="background-color:green">{{correctWords.join('')}}</span>
 	<span style="background-color:red">{{wrongWords.join('')}}</span>
 	<span style="color:black">{{wordsArray.join('')}}</span>
 </div>
 <br>
-<input type="text" [(ngModel)] = "typedValue" (input)="onSearchChange($any($event))">
+<input #typingField disabled="true" type="text" [(ngModel)] = "typedValue" (input)="onSearchChange($any($event))">
+
+<p> Typing Speed: {{typingSpeed}}</p>
